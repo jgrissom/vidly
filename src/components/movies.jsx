@@ -6,7 +6,7 @@ class Movies extends Component {
     movies: getMovies(),
   };
   handleDelete = (movie) => {
-    console.log("delete: ", movie);
+    this.setState({ movies: this.state.movies.filter((m) => m !== movie) });
   };
   render() {
     return (

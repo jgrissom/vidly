@@ -8,7 +8,7 @@ class Movies extends Component {
   render() {
     return (
       <React.Fragment>
-        <p className="mt-3">Showing 1 movies</p>
+        <p className="mt-3">Showing {this.state.movies.length} movies</p>
         <table className="table">
           <thead>
             <tr>

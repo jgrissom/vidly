@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import { getMovies } from "../services/fakeMovieService";
 
 class Movies extends Component {
-  state = {};
+  state = {
+    movies: getMovies(),
+  };
   render() {
+    console.log(this.state.movies);
     return (
       <React.Fragment>
         <p className="mt-3">Showing 1 movies</p>

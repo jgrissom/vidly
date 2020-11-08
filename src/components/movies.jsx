@@ -6,7 +6,6 @@ class Movies extends Component {
     movies: getMovies(),
   };
   render() {
-    console.log(this.state.movies);
     return (
       <React.Fragment>
         <p className="mt-3">Showing 1 movies</p>
@@ -21,17 +20,19 @@ class Movies extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>The Avengers</td>
-              <td>Action</td>
-              <td>7</td>
-              <td>3.5</td>
-              <td>
-                <button type="button" className="btn btn-danger">
-                  Delete
-                </button>
-              </td>
-            </tr>
+            {this.state.movies.map((movie) => (
+              <tr key={movie._id}>
+                <td>{movie.title}</td>
+                <td>{movie.genre.name}</td>
+                <td>{movie.numberInStock}</td>
+                <td>{movie.dailyRentalRate}</td>
+                <td>
+                  <button type="button" className="btn btn-danger">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </React.Fragment>

@@ -9,9 +9,10 @@ class Movies extends Component {
     this.setState({ movies: this.state.movies.filter((m) => m !== movie) });
   };
   render() {
+    if (this.state.movies.length === 0) return <p>There are no movies</p>;
     return (
       <React.Fragment>
-        <p className="mt-3">Showing {this.state.movies.length} movies</p>
+        <p>Showing {this.state.movies.length} movies</p>
         <table className="table">
           <thead>
             <tr>

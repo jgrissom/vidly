@@ -5,6 +5,9 @@ class Movies extends Component {
   state = {
     movies: getMovies(),
   };
+  handleDelete = () => {
+    console.log("delete");
+  };
   render() {
     return (
       <React.Fragment>
@@ -27,7 +30,11 @@ class Movies extends Component {
                 <td>{movie.numberInStock}</td>
                 <td>{movie.dailyRentalRate}</td>
                 <td>
-                  <button type="button" className="btn btn-danger">
+                  <button
+                    onClick={this.handleDelete}
+                    type="button"
+                    className="btn btn-danger"
+                  >
                     Delete
                   </button>
                 </td>
